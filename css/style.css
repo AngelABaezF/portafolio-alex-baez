@@ -301,7 +301,7 @@ animation: rotate 10s infinite linear;
     overflow: hidden;
     border-radius: 10px;
     background-color: #1a1a1a;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease;
 }
 
@@ -320,7 +320,7 @@ animation: rotate 10s infinite linear;
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    background: linear-gradient(transparent, black,rgba(0, 0, 0, 1));
     color: white;
     padding: 20px;
     text-align: center;
