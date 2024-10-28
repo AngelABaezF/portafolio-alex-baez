@@ -1,162 +1,185 @@
-.letter-image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 200px;
-	height: 200px;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	cursor: pointer;
+/* Estilo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.animated-mail {
-	position: absolute;
-	height: 150px;
-	width: 200px;
-	-webkit-transition: .4s;
-	-moz-transition: .4s;
-	transition: .4s;
-	
-	.body {
-		position: absolute;
-		bottom: 0;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 0 100px 200px;
-		border-color: transparent transparent #ff007f transparent;
-		z-index: 2;
-	}
-	
-	.top-fold {
-		position: absolute;
-		top: 50px;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 50px 100px 0 100px;
-		-webkit-transform-origin: 50% 0%;
-		-webkit-transition: transform .4s .4s, z-index .2s .4s;
-		-moz-transform-origin: 50% 0%;
-		-moz-transition: transform .4s .4s, z-index .2s .4s;
-		transform-origin: 50% 0%;
-		transition: transform .4s .4s, z-index .2s .4s;
-		border-color: #f73194 transparent transparent transparent;
-		z-index: 2;
-	}
-	
-	.back-fold {
-		position: absolute;
-		bottom: 0;
-		width: 200px;
-		height: 100px;
-		background: #ff67b3;
-		z-index: 0;
-	}
-	
-	.left-fold {
-		position: absolute;
-		bottom: 0;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 50px 0 50px 100px;
-		border-color: transparent transparent transparent #c2156c;
-		z-index: 2;
-	}
-	
-	.letter {
-		left: 20px;
-		bottom: 0px;
-		position: absolute;
-		width: 160px;
-		height: 60px;
-		background: white;
-		z-index: 1;
-		overflow: hidden;
-		-webkit-transition: .4s .2s;
-		-moz-transition: .4s .2s;
-		transition: .4s .2s;
-		
-		.letter-border {
-			height: 10px;
-			width: 100%;
-      background: repeating-linear-gradient(
-        -45deg,
-        #c2156c,
-        #c2156c 8px,
-        transparent 8px,
-        transparent 18px
-      );
-		}
-		
-		.letter-title {
-			margin-top: 10px;
-			margin-left: 5px;
-			height: 10px;
-			width: 40%;
-			background: #c2156c;
-		}
-		.letter-context {
-			margin-top: 10px;
-			margin-left: 5px;
-			height: 10px;
-			width: 20%;
-			background: #c2156c;
-		}
-		
-		.letter-stamp {
-			margin-top: 30px;
-			margin-left: 120px;
-			border-radius: 100%;
-			height: 30px;
-			width: 30px;
-			background: #c2156c;
-			opacity: 0.3;
-		}
-	}
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0a0a;
+    color: #00fff0;
+    line-height: 1.6;
 }
 
-.shadow {
-	position: absolute;
-	top: 200px;
-	left: 50%;
-	width: 400px;
-	height: 30px;
-	transition: .4s;
-	transform: translateX(-50%);
-	-webkit-transition: .4s;
-	-webkit-transform: translateX(-50%);
-	-moz-transition: .4s;
-	-moz-transform: translateX(-50%);
-	
-	border-radius: 100%;
-	background: radial-gradient(rgba(1, 255, 234, 0.5), rgba(1,255,234,0.0), rgba(1,255,234,0.0));
+/* Estilo para la barra */
+.header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 
-.letter-image:hover {
-    .animated-mail {
-        transform: translateY(50px);
-        -webkit-transform: translateY(50px);
-        -moz-transform: translateY(50px);
-    }
-    
-    .animated-mail .top-fold {
-        transition: transform .4s, z-index .2s;
-        transform: rotateX(180deg);
-        -webkit-transition: transform .4s, z-index .2s;
-        -webkit-transform: rotateX(180deg);
-        -moz-transition: transform .4s, z-index .2s;
-        -moz-transform: rotateX(180deg);
-        z-index: 0;
-    }
-    
-    .animated-mail .letter {
-        height: 180px;
-    }
-    
-    .shadow {
-        width: 250px;
-    }
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d0d0d;
+    border-bottom: 2px solid #00fff0;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00fff0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #00fff0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff007f;
+}
+
+/* Contenedor principal del proyecto */
+.project-details .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.project-details h1 {
+	font-size: 64px;
+    margin-bottom: 10px;
+	color: #ff007f;
+}
+
+.project-details h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #00fff0;
+    margin: 10px auto;
+}
+
+/* Título del proyecto */
+.project-name {
+    font-size: 2.5em;
+    color: #00fff0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estructura del contenido */
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.project-info {
+    max-width: 500px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+	color: #ff007f;
+}
+
+.project-info h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #00fff0;
+    margin: 10px auto;
+}
+
+.project-description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.project-technologies {
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.project-technologies h3 {
+    margin-bottom: 10px;
+	color: #ff007f;
+}
+
+.project-technologies h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #00fff0;
+    margin: 10px auto;
+}
+
+.project-technologies ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-technologies li {
+    background-color: #222;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Estilos para el video/imagen */
+.project-media iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: 3px solid #00fff0;
+    border-radius: 8px;
+}
+
+.project-media h3 {
+    margin-bottom: 10px;
+	color: #ff007f;
+}
+
+.project-media h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #00fff0;
+    margin: 10px auto;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d0d0d;
+    color: #00fff0;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #00fff0;
+    font-size: 14px;
 }
