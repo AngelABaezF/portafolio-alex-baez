@@ -34,6 +34,7 @@ body {
 }
 
 .logo {
+    text-decoration: none;
     font-size: 24px;
     color: #00fff0;
 }
@@ -67,17 +68,19 @@ body {
 
 .project-details h1 {
 	font-size: 64px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+    /*margin-bottom: 10px;*/
 	color: #ff007f;
 }
 
 .project-details h1::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
+    width: 250px;
+    height: 5px;
     background-color: #00fff0;
     margin: 10px auto;
+    margin-bottom: 30px;
 }
 
 /* Título del proyecto */
@@ -100,18 +103,18 @@ body {
     max-width: 500px;
 }
 
-.project-info h3 {
+.project-info h2 {
     margin-bottom: 10px;
 	color: #ff007f;
 }
 
-.project-info h3::after {
+.project-info h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 3px;
     background-color: #00fff0;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
 }
 
 .project-description {
@@ -125,18 +128,18 @@ body {
     margin-top: 20px;
 }
 
-.project-technologies h3 {
+.project-technologies h2 {
     margin-bottom: 10px;
 	color: #ff007f;
 }
 
-.project-technologies h3::after {
+.project-technologies h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 3px;
     background-color: #00fff0;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
 }
 
 .project-technologies ul {
@@ -151,7 +154,28 @@ body {
     margin: 5px 0;
 }
 
-/* Estilos para el video/imagen */
+.media-box {
+    display: flex;
+}
+
+/* Contenedor de visuales en dos columnas */
+.project-visuals {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos para el video */
+.project-media {
+    text-align: center;
+}
+
 .project-media iframe {
     width: 100%;
     max-width: 560px;
@@ -160,12 +184,13 @@ body {
     border-radius: 8px;
 }
 
-.project-media h3 {
+.project-media h2 {
     margin-bottom: 10px;
-	color: #ff007f;
+    color: #ff007f;
+    text-align: center;
 }
 
-.project-media h3::after {
+.project-media h2::after {
     content: '';
     display: block;
     width: 80px;
@@ -174,12 +199,77 @@ body {
     margin: 10px auto;
 }
 
-/* Footer */
-.footer {
-    background-color: #0d0d0d;
-    color: #00fff0;
+/* Estilos para el carrusel 3D */
+.carousel {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.carousel__container {
+    width: 320px;
+    height: 220px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite linear;
+}
+
+.carousel__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__item img {
+    width: 280px;
+    height: 180px;
+    border: 3px solid #00fff0;
+    border-radius: 8px;
+}
+
+/* Rotaciones para cada imagen en el carrusel */
+.carousel__item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.carousel__item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+.carousel__item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+.carousel__item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+.carousel__item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+.carousel__item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+
+/* Animación de rotación */
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/*Boton*/
+.project-code-button {
+    margin-top: 50px;
     text-align: center;
-    padding: 15px;
+}
+
+.code-link {
+    margin-top: 10px;
+    background-color: #ff007f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.code-link:hover {
+    background-color: #00fff0;
+}
+
+/* Footer */
+/*Footer*/
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #0d0d0d;
     border-top: 2px solid #00fff0;
-    font-size: 14px;
 }
