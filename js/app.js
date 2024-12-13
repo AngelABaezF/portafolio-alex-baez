@@ -42,6 +42,46 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateLogoText);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Elementos de la línea de tiempo
+    const timelinePoints = document.querySelectorAll('.timeline-point');
+    const timelineInfos = document.querySelectorAll('.timeline-info');
+    const prevButton = document.querySelector('.prev-btn');
+    const nextButton = document.querySelector('.next-btn');
+
+    let currentIndex = 0;  // Inicializamos en el primer punto de la línea de tiempo
+
+    // Función para cambiar el punto activo
+    function updateActivePoint() {
+        // Remover la clase 'active' de todos los puntos
+        timelinePoints.forEach(point => point.classList.remove('active'));
+        timelineInfos.forEach(info => info.classList.remove('active'));
+
+        // Añadir la clase 'active' al punto actual
+        timelinePoints[currentIndex].classList.add('active');
+        timelineInfos[currentIndex].classList.add('active');
+    }
+
+    // Evento para el botón de "Siguiente"
+    nextButton.addEventListener('click', function () {
+        if (currentIndex < timelinePoints.length - 1) {
+            currentIndex++;
+            updateActivePoint();
+        }
+    });
+
+    // Evento para el botón de "Anterior"
+    prevButton.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateActivePoint();
+        }
+    });
+
+    // Inicializamos con el primer punto activo
+    updateActivePoint();
+});
+
 window.addEventListener('scroll', function() {
     // Obtener la posición del scroll actual
     let currentScrollPosition = window.pageYOffset;

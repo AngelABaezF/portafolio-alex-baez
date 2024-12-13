@@ -399,6 +399,61 @@ h2::after {
     color: #00fff0;
 }
 
+/* Contenedor de botones de navegación */
+.timeline-navigation {
+    display: none;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.timeline-navigation button {
+    background-color: #00fff0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-navigation button:hover {
+    background-color: #ff007f;
+}
+
+/* Estilos para la visualización en dispositivos móviles */
+@media (max-width: 768px) {
+    .timeline-horizontal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-point {
+        margin-bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline-info {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    /* Mostrar los botones de navegación solo en móviles */
+    .timeline-navigation {
+        display: flex;
+    }
+
+    .timeline-point {
+        margin-bottom: 20px;
+        width: 30px; /* Aumentamos el tamaño de los puntos en dispositivos móviles */
+        height: 30px;
+    }
+
+    .timeline-point.active {
+        background-color: #ff007f; /* Cambiar color del punto activo */
+    }
+}
 
 /* Cuadrados Girando*/
 
