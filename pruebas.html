@@ -8,9 +8,48 @@
 </head>
 <body>
     <section id="about" class="about">
-        
-    </section>
+        <div class="timeline-horizontal">
+            <div class="timeline-point" data-info="event1">
+                <div class="tooltip">Ingreso al Tecnológico de Monterrey</div>
+            </div>
+            <div class="timeline-point" data-info="event2">
+                <div class="tooltip">Certificado de Frontend</div>
+            </div>
+            <div class="timeline-point" data-info="event3">
+                <div class="tooltip">Hackathon Moremos 2023</div>
+            </div>
+        </div>
     
+        <!-- Botones de navegación para móviles -->
+        <div class="timeline-navigation">
+            <button class="prev-btn">Anterior</button>
+            <button class="next-btn">Siguiente</button>
+        </div>
+    
+        <div class="timeline-info" id="event1">
+            <h3>Ingreso al Tecnológico de Monterrey</h3>
+            <p><strong>Categoría:</strong> Educación</p>
+            <p><strong>Fecha:</strong> 20 Agosto 2023</p>
+            <p><strong>Descripción:</strong> Ingreso al Tecnológico de Monterrey para estudiar Ingeniería en Tecnologías Computacionales.</p>
+            <img src="img/tec_logo.png" alt="Tecnológico de Monterrey" />
+        </div>
+    
+        <div class="timeline-info" id="event2">
+            <h3>Certificado de Frontend</h3>
+            <p><strong>Categoría:</strong> Certificados & Reconocimientos</p>
+            <p><strong>Fecha:</strong> 15 Julio 2023</p>
+            <p><strong>Descripción:</strong> Certificación de Frontend otorgada por la Fundación Carlos Slim.</p>
+            <img src="img/frontend_cert.png" alt="Frontend Certificado" />
+        </div>
+    
+        <div class="timeline-info" id="event3">
+            <h3>Hackathon Moremos 2023</h3>
+            <p><strong>Categoría:</strong> Experiencia</p>
+            <p><strong>Fecha:</strong> 12 de Octubre 2023</p>
+            <p><strong>Descripción:</strong> Participación en el Hackathon Moremos, una competencia de 24 horas.</p>
+            <img src="img/hackathon_moremos.png" alt="Hackathon Moremos" />
+        </div>           
+    </section>
     <script src="js/app.js"></script> 
 </body>
 </html>

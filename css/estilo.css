@@ -398,7 +398,7 @@ h2::after {
 .timeline-info h3 {
     color: #00fff0;
 }
-
+/*Version celular*/
 /* Contenedor de botones de navegación */
 .timeline-navigation {
     display: none;
@@ -408,7 +408,7 @@ h2::after {
 
 .timeline-navigation button {
     background-color: #00fff0;
-    color: white;
+    color: #ff007f;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -417,22 +417,8 @@ h2::after {
     transition: background-color 0.3s ease;
 }
 
-.timeline-navigation button:hover {
-    background-color: #ff007f;
-}
-
 /* Estilos para la visualización en dispositivos móviles */
 @media (max-width: 768px) {
-    .timeline-horizontal {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .timeline-point {
-        margin-bottom: 20px;
-        width: 30px;
-        height: 30px;
-    }
 
     .timeline-info {
         width: 90%;
@@ -442,12 +428,6 @@ h2::after {
     /* Mostrar los botones de navegación solo en móviles */
     .timeline-navigation {
         display: flex;
-    }
-
-    .timeline-point {
-        margin-bottom: 20px;
-        width: 30px; /* Aumentamos el tamaño de los puntos en dispositivos móviles */
-        height: 30px;
     }
 
     .timeline-point.active {

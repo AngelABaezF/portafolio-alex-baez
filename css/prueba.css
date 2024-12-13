@@ -149,7 +149,7 @@ body {
 }
 
 
-/*Estilo del hero*/
+/* Estilo del hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -158,6 +158,47 @@ body {
     align-items: center;
     text-align: center;
     background: linear-gradient(135deg, #0a0a0a1c 0%, #1a1a1a 100%);
+    overflow: hidden; /* Evita cualquier desbordamiento visual */
+}
+
+.hero h1 {
+    font-size: 64px; /* Mantiene el tamaño original */
+    margin-bottom: 10px;
+    white-space: nowrap; /* Impide saltos de línea */
+    color: transparent; /* Oculta el contenido original */
+    position: relative; /* Necesario para usar pseudo-elementos */
+    overflow: hidden; /* Evita cualquier desbordamiento */
+}
+
+.hero h1::after {
+    content: "Ángel Alexander Báez Flores"; /* Contenido por defecto */
+    color: #fff; /* Color del texto visible */
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center; /* Centra el texto */
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #ff007f;
+    margin-bottom: 20px;
+}
+
+/* Media Queries para el hero */
+
+/* Pantallas medianas (<= 768px) */
+@media screen and (max-width: 768px) {
+    .hero h1::after {
+        content: "Alex Báez"; /* Nuevo contenido reducido */
+    }
+}
+
+/* Pantallas pequeñas (<= 480px) */
+@media screen and (max-width: 480px) {
+    .hero h1::after {
+        content: "ÁABF"; /* Contenido más reducido */
+    }
 }
 
 .hero h1 {
@@ -206,28 +247,63 @@ h2::after {
 		transform: translatey(0px);
 	}
 }
-
+/* About Me */
+/* Avatar */
 .container1 {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .avatar {
-	width: 300px;
-	height: 300px;
-	box-sizing: border-box;
-	border: 5px #ff007f solid;
-	border-radius: 50%;
-	overflow: hidden;
-	box-shadow: 0 5px 15px 0px rgba(1, 204, 255, 0.6);
-	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
-	img { width: 100%; height: auto; }
+    width: 300px;
+    height: 300px;
+    position: relative; /* Importante para posicionar el overlay */
+    box-sizing: border-box;
+    border: 5px #ff007f solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(1, 204, 255, 0.6);
+    transform: translateY(0px);
+    animation: float 6s ease-in-out infinite;
 }
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+}
+
+/* Overlay oculto por defecto */
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto */
+    transition: opacity 0.3s ease; /* Suaviza la aparición */
+    z-index: 2; /* Se asegura de estar encima de la imagen */
+}
+
+.avatar-overlay img {
+    width: 50px; /* Tamaño del logo */
+    height: auto;
+    filter: invert(100%); /* Si el logo es oscuro, se invierte a blanco */
+}
+
+/* Muestra el overlay al pasar el cursor */
+.avatar:hover .avatar-overlay {
+    opacity: 1;
+}
+
 
 /* Línea de tiempo horizontal */
 .timeline-horizontal {
@@ -322,7 +398,42 @@ h2::after {
 .timeline-info h3 {
     color: #00fff0;
 }
+/*Version celular*/
+/* Contenedor de botones de navegación */
+.timeline-navigation {
+    display: none;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
+.timeline-navigation button {
+    background-color: #00fff0;
+    color: #ff007f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para la visualización en dispositivos móviles */
+@media (max-width: 768px) {
+
+    .timeline-info {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    /* Mostrar los botones de navegación solo en móviles */
+    .timeline-navigation {
+        display: flex;
+    }
+
+    .timeline-point.active {
+        background-color: #ff007f; /* Cambiar color del punto activo */
+    }
+}
 
 /* Cuadrados Girando*/
 
