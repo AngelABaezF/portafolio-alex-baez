@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cambiar el texto del logo según el ancho de la pantalla
     const updateLogoText = () => {
         if (window.innerWidth <= 280) {
-            logo.textContent = "AABF";
+            logo.textContent = "ÁABF";
         } else if (window.innerWidth <= 760) {
             logo.textContent = "Alex Báez";
         } else {
