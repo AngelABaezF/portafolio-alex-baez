@@ -39,6 +39,16 @@ body {
     color: #00fff0;
 }
 
+.logo a {
+    color: #00fff0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #ff007f;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -232,12 +242,12 @@ body {
 }
 
 /* Rotaciones para cada imagen en el carrusel */
-.carousel__item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
-.carousel__item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
-.carousel__item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
-.carousel__item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+.carousel__item:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
+.carousel__item:nth-child(2) { transform: rotateY(120deg) translateZ(150px); }
+.carousel__item:nth-child(3) { transform: rotateY(240deg) translateZ(150px); }
+/*.carousel__item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
 .carousel__item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
-.carousel__item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+.carousel__item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }*/
 
 /* Animación de rotación */
 @keyframes rotate {

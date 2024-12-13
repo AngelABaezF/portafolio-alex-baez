@@ -2,6 +2,46 @@
 let lastScrollPosition = 0;
 const header = document.querySelector('.header');
 
+document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const sideMenu = document.getElementById("side-menu");
+    const closeBtn = document.getElementById("close-btn");
+    const menuLinks = document.querySelectorAll(".side-menu-links a");
+    const logo = document.getElementById("logo");
+
+    // Abrir menú lateral
+    menuIcon.addEventListener("click", () => {
+        sideMenu.classList.add("active");
+    });
+
+    // Cerrar menú lateral
+    closeBtn.addEventListener("click", () => {
+        sideMenu.classList.remove("active");
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            sideMenu.classList.remove("active");
+        });
+    });
+
+    // Cambiar el texto del logo según el ancho de la pantalla
+    const updateLogoText = () => {
+        if (window.innerWidth <= 280) {
+            logo.textContent = "AABF";
+        } else if (window.innerWidth <= 760) {
+            logo.textContent = "Alex Báez";
+        } else {
+            logo.textContent = "Ángel Alexander Báez Flores";
+        }
+    };
+
+    // Ejecutar al cargar y al redimensionar
+    updateLogoText();
+    window.addEventListener("resize", updateLogoText);
+});
+
 window.addEventListener('scroll', function() {
     // Obtener la posición del scroll actual
     let currentScrollPosition = window.pageYOffset;
