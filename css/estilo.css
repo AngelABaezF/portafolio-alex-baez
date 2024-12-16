@@ -169,63 +169,69 @@ body {
 
 .hero h1 {
     font-size: 64px;
-    /* Mantiene el tamaño original */
     margin-bottom: 10px;
     white-space: nowrap;
-    /* Impide saltos de línea */
-    color: transparent;
-    /* Oculta el contenido original */
     position: relative;
-    /* Necesario para usar pseudo-elementos */
     overflow: hidden;
-    /* Evita cualquier desbordamiento */
+    color: transparent;
+    background: none;
+    /* Se elimina el gradiente del texto principal */
 }
 
 .hero h1::after {
     content: "Ángel Alexander Báez Flores";
-    /* Contenido por defecto */
-    color: #fff;
-    /* Color del texto visible */
+    /* Contenido inicial para escritorio */
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    color: transparent;
+    background: linear-gradient(to right,
+            rgb(76, 217, 105),
+            rgb(52, 170, 220),
+            rgb(88, 86, 217),
+            rgb(255, 45, 83),
+            rgb(255, 45, 83),
+            rgb(88, 86, 217),
+            rgb(52, 170, 220),
+            rgb(76, 217, 105));
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
     text-align: center;
-    /* Centra el texto */
+    animation: rgbAnimation 10s linear infinite;
+    font-size: inherit;
 }
 
-.hero h2 {
-    font-size: 36px;
-    color: #ff007f;
-    margin-bottom: 20px;
-}
-
-/* Media Queries para el hero */
-
-/* Pantallas medianas (<= 768px) */
+/* Cambios según resolución */
 @media screen and (max-width: 768px) {
     .hero h1::after {
         content: "Alex Báez";
-        /* Nuevo contenido reducido */
     }
 }
 
-/* Pantallas pequeñas (<= 480px) */
 @media screen and (max-width: 480px) {
     .hero h1::after {
         content: "ÁABF";
-        /* Contenido más reducido */
     }
-}
-
-.hero h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
 }
 
 .hero h2 {
     font-size: 36px;
     color: #ff007f;
     margin-bottom: 20px;
+}
+
+/* Animación RGB */
+@keyframes rgbAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
 }
 
 .about,
@@ -321,7 +327,7 @@ h2::after {
 }
 
 .avatar-overlay img {
-    width: 50px;
+    width: 150px;
     /* Tamaño del logo */
     height: auto;
     filter: invert(100%);
@@ -470,7 +476,7 @@ h2::after {
     }
 }
 
-/* Cuadrados Girando */
+/* Cuadrados Girando*/
 
 .container {
     height: 300px;
@@ -504,13 +510,6 @@ h2::after {
 
     100% {
         transform: rotate(360deg);
-    }
-}
-
-/* Ajustes exclusivos para dispositivos móviles */
-@media (max-width: 768px) {
-    .square {
-        will-change: transform; /* Optimización para animaciones */
     }
 }
 
