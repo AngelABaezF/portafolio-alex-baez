@@ -82,6 +82,41 @@ document.addEventListener('DOMContentLoaded', function () {
     updateActivePoint();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const projectsContainer = document.querySelector('.projects-container');
+    const projectCards = document.querySelectorAll('.project-card');
+    const prevButton = document.querySelector('.prev-project');
+    const nextButton = document.querySelector('.next-project');
+
+    let currentIndex = 0;
+
+    // Función para actualizar la posición del carrusel
+    function updateCarousel() {
+        const translateX = -currentIndex * 100; // Calculamos el desplazamiento
+        projectsContainer.style.transform = `translateX(${translateX}%)`;
+    }
+
+    // Evento para botón "Siguiente"
+    nextButton.addEventListener('click', function () {
+        if (currentIndex < projectCards.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Evento para botón "Anterior"
+    prevButton.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Iniciar en el primer proyecto
+    updateCarousel();
+});
+
+
 window.addEventListener('scroll', function() {
     // Obtener la posición del scroll actual
     let currentScrollPosition = window.pageYOffset;

@@ -3,53 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrusel 3D</title>
+    <title>Ángel Alexander | Portafolio</title>
     <link rel="stylesheet" href="css/prueba.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="about" class="about">
-        <div class="timeline-horizontal">
-            <div class="timeline-point" data-info="event1">
-                <div class="tooltip">Ingreso al Tecnológico de Monterrey</div>
+    <section id="projects" class="projects">
+        <!-- Sección de los más nuevos -->
+        <h3>Más Nuevos</h3>
+        <br>
+        <div class="projects-container filter-section" id="new-projects">
+            <div class="project-card web y arduino"><!--https://via.placeholder.com/400x550-->
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/400x550" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>ComposTech</h3>
+                    <p>Proyecto desarrollado durante el Hackathon Morelos 13a edición. Este proyecto esta hecho con codigo puro de HTML, CSS, JavaScript y Python.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
             </div>
-            <div class="timeline-point" data-info="event2">
-                <div class="tooltip">Certificado de Frontend</div>
+            <div class="project-card python y web"><!--https://via.placeholder.com/400x550-->
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/400x550" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Mixtli Algoritmo Adelgazamiento</h3>
+                    <p>Proyecto desarrollado durante el Hackathon Morelos 13a edición. Este proyecto esta hecho con codigo puro de HTML, CSS, JavaScript y Python.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
             </div>
-            <div class="timeline-point" data-info="event3">
-                <div class="tooltip">Hackathon Moremos 2023</div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/portafolio.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Portafolio</h3>
+                    <p>Desarrollo de un sitio web dinamico el cual funciona como Portafolio personal. Este proyecto esta hecho con codigo puro de HTML, CSS y JavaScript.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/MQTT.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Chat</h3>
+                    <p>El proyecto utiliza el protocolo MQTT para la mensajería en tiempo real. Los mensajes se envían desde el cliente a través de WebSockets (AWS) y son manejados por un servidor Express en Node.js.</p>
+                    <a href="https://github.com/angel3mivC/TC1001S_proyecto" class="button">Mas Información</a>
+                </div>
             </div>
         </div>
     
-        <!-- Botones de navegación para móviles -->
-        <div class="timeline-navigation">
-            <button class="prev-btn">Anterior</button>
-            <button class="next-btn">Siguiente</button>
+        <!-- Sección de los más importantes -->
+        <h3>Más Importantes</h3>
+        <br>
+        <div class="projects-container filter-section" id="important-projects">
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/HealthFinder.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>HealthFinder</h3>
+                    <p>Proyecto desarrollado durante el Hackathon Morelos 13a edición. Este proyecto esta hecho con codigo puro de HTML, CSS, JavaScript y Python.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/portafolio.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Portafolio</h3>
+                    <p>Desarrollo de un sitio web dinamico el cual funciona como Portafolio personal. Este proyecto esta hecho con codigo puro de HTML, CSS y JavaScript.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/flores-amarillas.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Flores Amarillas</h3>
+                    <p>El proyecto fue realizado para mi pareja con la intención de celebrar el 21 de septiempre de manera creativa.</p>
+                    <a href="https://angelabaezf.github.io/Flores-Amarillas/" class="button">Mas Información</a>
+                </div>
+            </div>
         </div>
-    
-        <div class="timeline-info" id="event1">
-            <h3>Ingreso al Tecnológico de Monterrey</h3>
-            <p><strong>Categoría:</strong> Educación</p>
-            <p><strong>Fecha:</strong> 20 Agosto 2023</p>
-            <p><strong>Descripción:</strong> Ingreso al Tecnológico de Monterrey para estudiar Ingeniería en Tecnologías Computacionales.</p>
-            <img src="img/tec_logo.png" alt="Tecnológico de Monterrey" />
+
+        <!--En curso-->
+        <h3>En curso</h3>
+        <br>
+        <div class="projects-container filter-section" id="important-projects">
+            <div class="project-card web"><!--https://via.placeholder.com/400x550-->
+                <div class="card-image">
+                    <img src="img/index/teachfinder.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Teach Finder</h3>
+                    <p>Proyecto desarrollado durante el Hackathon Morelos 13a edición. Este proyecto esta hecho con codigo puro de HTML, CSS, JavaScript y Python.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/portafolio.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">.
+                    <h3>Portafolio</h3>
+                    <p>Desarrollo de un sitio web dinamico el cual funciona como Portafolio personal. Este proyecto esta hecho con codigo puro de HTML, CSS y JavaScript.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
         </div>
-    
-        <div class="timeline-info" id="event2">
-            <h3>Certificado de Frontend</h3>
-            <p><strong>Categoría:</strong> Certificados & Reconocimientos</p>
-            <p><strong>Fecha:</strong> 15 Julio 2023</p>
-            <p><strong>Descripción:</strong> Certificación de Frontend otorgada por la Fundación Carlos Slim.</p>
-            <img src="img/frontend_cert.png" alt="Frontend Certificado" />
+        <!--Todos los proyectos-->
+        <h3>Todos los Proyectos</h3>
+        <br>
+        <div class="projects-container filter-section" id="important-projects">
+            <div class="project-card ensamblador">
+                <div class="card-image">
+                    <img src="img/index/Ensamblador.jpg" alt="Proyecto Ensamblador">
+                </div>
+                <div class="card-content">
+                    <h3>Control de sistemas automotrices</h3>
+                    <p>Este proyecto fue desarrollado para un simulador de ensamblador de 16 bit, ademas se hizo uno para 8 bit.</p>
+                    <a href="#" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/MQTT.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Chat</h3>
+                    <p>El proyecto utiliza el protocolo MQTT para la mensajería en tiempo real. Los mensajes se envían desde el cliente a través de WebSockets (AWS) y son manejados por un servidor Express en Node.js.</p>
+                    <a href="https://github.com/angel3mivC/TC1001S_proyecto" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/HealthFinder.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Health Finder</h3>
+                    <p>Proyecto desarrollado durante el Hackathon Morelos 13a edición. Este proyecto esta hecho con codigo puro de HTML, CSS, JavaScript y Python.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/HTML-CSS-JS/Portafolio" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/portafolio.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Portafolio</h3>
+                    <p>Desarrollo de un sitio web dinamico el cual funciona como Portafolio personal. Este proyecto esta hecho con codigo puro de HTML, CSS y JavaScript.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card matlab">
+                <div class="card-image">
+                    <img src="img/index/matlab1.png" alt="Proyecto Matlab">
+                </div>
+                <div class="card-content">
+                    <h3>Erupcion Volcanica</h3>
+                    <p>Porgrama hecho en Matlab para la simulación de los tiros parabolicos generados por un volcan en erupcion, teniendo en cuenta parametros fisicos reales.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card matlab">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/400x550" alt="Proyecto Matlab">
+                </div>
+                <div class="card-content">
+                    <h3>Doomsday</h3>
+                    <p>Porgrama hecho en Matlab para la simulación de los tiros parabolicos generados por un volcan en erupcion, teniendo en cuenta parametros fisicos reales.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card matlab">
+                <div class="card-image">
+                    <img src="img/index/frenomagnetico.png" alt="Proyecto Matlab">
+                </div>
+                <div class="card-content">
+                    <h3>Freno Electromagnetico</h3>
+                    <p>Porgrama hecho en Matlab para la simulación de los tiros parabolicos generados por un volcan en erupcion, teniendo en cuenta parametros fisicos reales.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card matlab">
+                <div class="card-image">
+                    <img src="img/index/malaria.png" alt="Proyecto Matlab">
+                </div>
+                <div class="card-content">
+                    <h3>Malaria</h3>
+                    <p>Porgrama hecho en Matlab para la simulación de los tiros parabolicos generados por un volcan en erupcion, teniendo en cuenta parametros fisicos reales.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card matlab">
+                <div class="card-image">
+                    <img src="img/index/montañarusa.png" alt="Proyecto Matlab">
+                </div>
+                <div class="card-content">
+                    <h3>Montaña Rusa</h3>
+                    <p>Porgrama hecho en Matlab para la simulación de los tiros parabolicos generados por un volcan en erupcion, teniendo en cuenta parametros fisicos reales.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web c++">
+                <div class="card-image">
+                    <img src="img/index/starwars.png" alt="Proyecto Web y C++">
+                </div>
+                <div class="card-content">
+                    <h3>Star Wars Streaming Services</h3>
+                    <p>Implementación de estructuras de datos avanzadas en C++ y desarrollo de una interfaz web.</p>
+                    <a href="#" class="button">Mas Información</a>
+                </div>
+            </div>            
+            <div class="project-card c++">
+                <div class="card-image">
+                    <img src="img/index/POO.png" alt="Proyecto C++">
+                </div>
+                <div class="card-content">
+                    <h3>Programación Orientada a Objetos</h3>
+                    <p>Implementación de estructuras de datos avanzadas en C++.</p>
+                    <a href="#" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card python">
+                <div class="card-image">
+                    <img src="img/index/procesadorimg.png" alt="Proyecto Python">
+                </div>
+                <div class="card-content">
+                    <h3>Procesador de Imagenes</h3>
+                    <p>Se genero un procesador de imagenes en Python el cual te permite aplicar diversos filtros a una imagen, ademas se realizo una interfaz atractiva para el procesador.</p>
+                    <a href="https://github.com/AngelABaezF/Proyectos-Personales/tree/master/Python" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card python">
+                <div class="card-image">
+                    <img src="img/index/halo2d.png" alt="Proyecto Python">
+                </div>
+                <div class="card-content">
+                    <h3>Halo 2D Adventure</h3>
+                    <p>Video juego generado a traves de Pygame inspirado de la saga Halo con un enfoque 2D.</p>
+                    <a href="html/Halo2D.html" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/tujpa-juego.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Videojuego Web</h3>
+                    <p>El proyecto fue realizado para el Tribunal Unitario de Justicia Para Adolecentes (TUJPA) con la intención de promover el interes de los adolecentes basado en el juego de television "100 Nexicanos Dijeron".</p>
+                    <a href="https://github.com/angel3mivC/TC1001S_proyecto" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/tujpa-paginaweb.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Sitio Web</h3>
+                    <p>El proyecto fue realizado para el Tribunal Unitario de Justicia Para Adolecentes (TUJPA) con la intención de promover el interes de los adolecentes.</p>
+                    <a href="https://github.com/angel3mivC/TC1001S_proyecto" class="button">Mas Información</a>
+                </div>
+            </div>
+            <div class="project-card web">
+                <div class="card-image">
+                    <img src="img/index/flores-amarillas.png" alt="Proyecto Web">
+                </div>
+                <div class="card-content">
+                    <h3>Flores Amarillas</h3>
+                    <p>El proyecto fue realizado para mi pareja con la intención de celebrar el 21 de septiempre de manera creativa.</p>
+                    <a href="https://angelabaezf.github.io/Flores-Amarillas/" class="button">Mas Información</a>
+                </div>
+            </div>
         </div>
-    
-        <div class="timeline-info" id="event3">
-            <h3>Hackathon Moremos 2023</h3>
-            <p><strong>Categoría:</strong> Experiencia</p>
-            <p><strong>Fecha:</strong> 12 de Octubre 2023</p>
-            <p><strong>Descripción:</strong> Participación en el Hackathon Moremos, una competencia de 24 horas.</p>
-            <img src="img/hackathon_moremos.png" alt="Hackathon Moremos" />
-        </div>           
     </section>
-    <script src="js/app.js"></script> 
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
