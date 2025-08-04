@@ -3,38 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ángel Alexander | Portafolio</title>
-    <link rel="stylesheet" href="css/prueba.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Carrusel 3D Adaptativo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        h1 {
+            color: #00fff0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el carrusel 3D adaptativo */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+
+        .carousel__container {
+            width: 320px;
+            height: 220px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 10s infinite linear;
+        }
+
+        .carousel__item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel__item img {
+            width: 280px;
+            height: 180px;
+            border: 3px solid #00fff0;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Para imágenes de ejemplo */
+        .carousel__item div {
+            width: 280px;
+            height: 180px;
+            border: 3px solid #00fff0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Animación de rotación */
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Controles para pruebas */
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            background: #00fff0;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .controls button:hover {
+            background: #00d4c7;
+        }
+
+        /* Información */
+        .info {
+            color: #00fff0;
+            text-align: center;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo"><a href="index.html" id="logo">Ángel Alexander Báez Flores</a></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="menu-icon" id="menu-icon">&#9776;</div>
-        <div class="side-menu" id="side-menu">
-            <button class="close-btn" id="close-btn">&times;</button>
-            <ul class="side-menu-links">
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+    <h1>Carrusel 3D Adaptativo</h1>
+    
+    <div class="info">
+        <p>Este carrusel se ajusta automáticamente según el número de imágenes que contenga.</p>
+        <p>Prueba los botones para ver diferentes configuraciones:</p>
+    </div>
+
+    <div class="controls">
+        <button onclick="setCarouselImages(3)">3 Imágenes</button>
+        <button onclick="setCarouselImages(4)">4 Imágenes</button>
+        <button onclick="setCarouselImages(5)">5 Imágenes</button>
+        <button onclick="setCarouselImages(6)">6 Imágenes</button>
+        <button onclick="setCarouselImages(8)">8 Imágenes</button>
+        <button onclick="setCarouselImages(12)">12 Imágenes</button>
+    </div>
+
+    <!-- Carrusel 3D de imágenes del proyecto -->
+    <div class="carousel">
+        <div class="carousel__container" id="carouselContainer">
+            <div class="carousel__item"><div>Imagen 1</div></div>
+            <div class="carousel__item"><div>Imagen 2</div></div>
+            <div class="carousel__item"><div>Imagen 3</div></div>
+            <div class="carousel__item"><div>Imagen 4</div></div>
+            <div class="carousel__item"><div>Imagen 5</div></div>
+            <div class="carousel__item"><div>Imagen 6</div></div>
         </div>
-    </header>
-    <section class="hero">
-        <h1>Ángel Alexander Báez Flores</h1>
-        <h2>Desarrollador Full-Stack</h2>
-        <p>“Si decides hacer solo las cosas que sabes que van a funcionar, dejarás un montón de oportunidades encima de la mesa”. Jeff Bezos</p>
-    </section>
-    <footer class="footer">
-        <p>© 2024 Ángel Alexander Báez Flores. Todos los derechos reservados.</p>
-    </footer>
-    <script src="js/app.js"></script>
+    </div>
+
+    <script>
+        function calculateCarouselPositions() {
+            const container = document.getElementById('carouselContainer');
+            const items = container.querySelectorAll('.carousel__item');
+            const totalItems = items.length;
+            
+            if (totalItems === 0) return;
+            
+            // Calcular el ángulo entre cada elemento
+            const angleStep = 360 / totalItems;
+            
+            // Calcular el radio óptimo basado en el número de elementos
+            // Más elementos necesitan un radio mayor para evitar solapamiento
+            const baseRadius = 150;
+            const radiusMultiplier = Math.max(1, totalItems / 6);
+            const radius = baseRadius * radiusMultiplier;
+            
+            // Aplicar transformaciones a cada elemento
+            items.forEach((item, index) => {
+                const angle = angleStep * index;
+                item.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+            });
+            
+            console.log(`Carrusel configurado para ${totalItems} elementos con radio ${radius}px`);
+        }
+
+        function setCarouselImages(count) {
+            const container = document.getElementById('carouselContainer');
+            
+            // Limpiar elementos existentes
+            container.innerHTML = '';
+            
+            // Crear nuevos elementos
+            for (let i = 1; i <= count; i++) {
+                const item = document.createElement('div');
+                item.className = 'carousel__item';
+                
+                const content = document.createElement('div');
+                content.textContent = `Imagen ${i}`;
+                
+                item.appendChild(content);
+                container.appendChild(item);
+            }
+            
+            // Recalcular posiciones
+            calculateCarouselPositions();
+        }
+
+        // Función para usar con tus imágenes reales
+        function initializeCarouselWithImages() {
+            // Esta función detecta automáticamente las imágenes existentes
+            // y configura el carrusel sin necesidad de cambiar el HTML
+            calculateCarouselPositions();
+        }
+
+        // Inicializar cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateCarouselPositions();
+        });
+
+        // Observer para detectar cambios en el DOM automáticamente
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    calculateCarouselPositions();
+                }
+            });
+        });
+
+        // Observar cambios en el contenedor del carrusel
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('carouselContainer');
+            if (container) {
+                observer.observe(container, { childList: true });
+            }
+        });
+    </script>
 </body>
 </html>

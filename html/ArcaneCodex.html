@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Ángel Alexander</title>
+    <link rel="stylesheet" href="/css/estilo-proyectos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="header">
+        <div class="logo"><a href="../index.html">Ángel Alexander Báez Flores</a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de detalles del proyecto -->
+    <section class="project-details">
+        <div class="container">
+            <h1 class="project-name">ComposTech</h1>
+            
+            <!-- Recursos Visuales del proyecto en dos columnas -->
+            <div class="project-visuals">
+                <!-- Video del proyecto -->
+                <div class="project-media">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/9Nih209CXFs"
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Carrusel 3D de imágenes del proyecto -->
+                <div class="carousel">
+                    <div class="carousel__container">
+                        <div class="carousel__item"><img src="/img/arcanecodex/IMG_4284.JPG" alt="Imagen 1"></div>
+                        <div class="carousel__item"><img src="/img/arcanecodex/IMG_4279.JPG" alt="Imagen 2"></div>
+                        <div class="carousel__item"><img src="/img/arcanecodex/IMG_4283.JPG" alt="Imagen 3"></div>
+                        <div class="carousel__item"><img src="/img/arcanecodex/IMG_4280.JPG" alt="Imagen 4"></div>
+                        <div class="carousel__item"><img src="/img/arcanecodex/IMG_4282.JPG" alt="Imagen 5"></div>
+                    </div>
+                </div>
+                <script>
+                    // Función para configurar el carrusel 3D dinámicamente
+                    function setupDynamicCarousel() {
+                        // Obtener todos los elementos del carrusel
+                        const carouselItems = document.querySelectorAll('.carousel__item');
+                        const itemCount = carouselItems.length;
+                        
+                        // Configuraciones según la cantidad de imágenes
+                        const configurations = {
+                            3: { translateZ: 100, rotateYIncrement: 120 },
+                            4: { translateZ: 150, rotateYIncrement: 90 },
+                            5: { translateZ: 200, rotateYIncrement: 72 },
+                            6: { translateZ: 250, rotateYIncrement: 60 }
+                        };
+                        
+                        // Verificar si existe una configuración para esta cantidad de imágenes
+                        if (!configurations[itemCount]) {
+                            console.warn(`No hay configuración definida para ${itemCount} imágenes en el carrusel`);
+                            return;
+                        }
+                        
+                        const config = configurations[itemCount];
+                        
+                        // Aplicar las transformaciones a cada elemento
+                        carouselItems.forEach((item, index) => {
+                            const rotateY = index * config.rotateYIncrement;
+                            const transform = `rotateY(${rotateY}deg) translateZ(${config.translateZ}px)`;
+                            item.style.transform = transform;
+                        });
+                        
+                        console.log(`Carrusel configurado para ${itemCount} imágenes:`, config);
+                    }
+
+                    // Ejecutar la configuración cuando el DOM esté cargado
+                    document.addEventListener('DOMContentLoaded', function() {
+                        setupDynamicCarousel();
+                    });
+
+                    // También ejecutar si ya está cargado
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', setupDynamicCarousel);
+                    } else {
+                        setupDynamicCarousel();
+                    }
+                </script>
+            </div>
+
+
+            <div class="project-content">
+                <!-- Información del proyecto -->
+                <div class="project-info">
+                    <h2>Descripción del proyecto</h2>
+                    <p class="project-description">
+                        Desarrollé un videojuego educativo de matemáticas para la empresa Aulify, enfocado en el aprendizaje interactivo. El proyecto se completó en un ciclo de 15 semanas, utilizando la metodología ágil Scrum para gestionar el desarrollo. La solución incluyó un dashboard administrativo robusto, diseñado para la gestión de datos y monitoreo del desempeño de los usuarios. Mi trabajo fue reconocido por Aulify por la alta calidad y por cumplir todos los criterios de éxito establecidos.                    </p>
+                    <h2>Rol y Responsavilidades</h2>
+                    <p class="project-description">
+                        Actué como Gerente de Proyecto (PM), liderando y coordinando al equipo de desarrollo. Mis responsabilidades técnicas incluyeron el desarrollo de las mecánicas de juego principales en Unity, así como la estructuración e implementación de la base de datos en AWS. Fui responsable del diseño y desarrollo completo del dashboard administrativo. Este proyecto me permitió demostrar mis habilidades como desarrollador full-stack y líder de equipo, gestionando tanto la visión del producto como su ejecución técnica.
+                    </p>
+                </div>
+
+                <div class="project-technologies">
+                    <h2>Software y Lenguajes Utilizados</h2>
+                    <ul>
+                        <li>Unity</li>
+                        <li>React</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>AWS (Amazon Web Service)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botón "Ver código" -->
+            <!-- <div class="project-code-button">
+                <a href="#" class="code-link">Ver Código</a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Ángel Alexander Báez Flores. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

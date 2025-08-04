@@ -330,14 +330,6 @@ body {
     border-radius: 8px;
 }
 
-/* Rotaciones para cada imagen en el carrusel */
-.carousel__item:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
-.carousel__item:nth-child(2) { transform: rotateY(120deg) translateZ(150px); }
-.carousel__item:nth-child(3) { transform: rotateY(240deg) translateZ(150px); }
-/*.carousel__item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
-.carousel__item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
-.carousel__item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }*/
-
 /* Animación de rotación */
 @keyframes rotate {
     from { transform: rotateY(0deg); }
